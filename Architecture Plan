@@ -1,0 +1,107 @@
+# Team Project Architecture Plan
+
+**Team Name:** _________________________
+
+**Project Name:** _________________________
+
+**Team Members:**
+1. _________________________
+2. _________________________
+3. _________________________
+4. _________________________
+
+**Project Domain:** ☐ Legal  ☐ Medical  ☐ Academic  ☐ Business  ☐ Other: __________
+
+---
+
+## Part 1: Project Overview
+
+### What problem are you solving?
+
+
+
+
+### Who will use your application?
+
+
+
+
+### What's your core value proposition? (In one sentence)
+
+
+
+
+---
+
+## Part 2: Define Your Layers
+
+### UI Layer (Streamlit)
+
+**What pages/screens do you need?**
+
+1. Main page: _________________________
+   - Purpose: _________________________
+
+2. Additional page: _________________________
+   - Purpose: _________________________
+
+3. Additional page: _________________________
+   - Purpose: _________________________
+
+**User Inputs:**
+
+- ☐ File upload (PDF, images, CSV, etc.)
+  - File types: _________________________
+- ☐ Text input (questions, search, forms)
+  - For: _________________________
+- ☐ Dropdown selections
+  - Options: _________________________
+- ☐ Sliders/numeric inputs
+  - For: _________________________
+- ☐ Other: _________________________
+
+**What do you display to users?**
+
+- ☐ Extracted structured data
+- ☐ Chat conversations
+- ☐ Charts/visualizations
+- ☐ Tables
+- ☐ Metrics/statistics
+- ☐ Other: _________________________
+
+---
+
+### Service Layer (Business Logic)
+
+**What services does your domain need?**
+
+Think about major features/capabilities.
+
+**Service 1:** _________________________ Service
+
+Purpose: _________________________
+
+Main responsibilities:
+-
+-
+-
+
+**Service 2:** _________________________ Service
+
+Purpose: _________________________
+
+Main responsibilities:
+-
+-
+-
+
+**Service 3:** _________________________ Service
+
+Purpose: _________________________
+
+Main responsibilities:
+-
+-
+-
+
+---
