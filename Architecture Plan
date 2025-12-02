@@ -5,12 +5,12 @@
 **Project Name:** _________________________
 
 **Team Members:**
-1. _________________________
-2. _________________________
-3. _________________________
+1. Iurii Sheiman
+2. Florian Xheka
+3. Emmanuella Ohanma
 4. _________________________
 
-**Project Domain:** ☐ Legal  ☐ Medical  ☐ Academic  ☐ Business  ☐ Other: __________
+**Project Domain:** ☐ Legal  ☐ Medical  X Academic  ☐ Business  ☐ Other: __________
 
 ---
 
@@ -22,7 +22,8 @@
 
 
 ### Who will use your application?
-
+Students, schoolchildren, and lifelong learners.
+Sometimes teachers (for the study materials)
 
 
 
@@ -39,22 +40,25 @@
 
 **What pages/screens do you need?**
 
-1. Main page: _________________________
+1. Main page: (image here) (buttons for upload, "get summary", "ask questions", "generate quiz")
    - Purpose: _________________________
 
-2. Additional page: _________________________
+2. Additional page: Summary UI
    - Purpose: _________________________
 
-3. Additional page: _________________________
+3. Additional page: Questions UI
+   - Purpose: _________________________
+
+3. Additional page: Quiz UI
    - Purpose: _________________________
 
 **User Inputs:**
 
-- ☐ File upload (PDF, images, CSV, etc.)
-  - File types: _________________________
-- ☐ Text input (questions, search, forms)
-  - For: _________________________
-- ☐ Dropdown selections
+- X File upload (PDF, images, CSV, etc.)
+  - File types: PDF, TXT, DOCX, etc (Should have a complete list)
+- X Text input (questions, search, forms)
+  - For: Questions, maybe answers for fill in-the-blank quiz questions
+- ☐ Dropdown selections ---Not sure for now---
   - Options: _________________________
 - ☐ Sliders/numeric inputs
   - For: _________________________
@@ -62,18 +66,18 @@
 
 **What do you display to users?**
 
-- ☐ Extracted structured data
-- ☐ Chat conversations
+- X Extracted structured data
+- X Chat conversations
 - ☐ Charts/visualizations
 - ☐ Tables
 - ☐ Metrics/statistics
-- ☐ Other: _________________________
+- X Other: Generated Quiz, Quiz answers
 
 ---
 
 ### Service Layer (Business Logic)
 
-**What services does your domain need?**
+**What services does your domain need?** (WIP)
 
 Think about major features/capabilities.
 
