@@ -1,6 +1,7 @@
 structure (for now):
 
 -Studyspark.py
+-.env
 -pages
 --(all four pages go here)
 -services
