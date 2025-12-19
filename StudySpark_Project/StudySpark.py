@@ -1,11 +1,11 @@
 import streamlit as st
 from dotenv import load_dotenv
-from services.AIService import AIService
+from services.ai_service import AIService
 
 load_dotenv()
 
 if 'AIService' not in st.session_state:
-    st.session_state.AIService = AIService()
+    st.session_state.ai_service = AIService()
 
 st.set_page_config(page_title="StudySpark", layout="centered")
 
@@ -27,4 +27,5 @@ with col2:
         st.switch_page("pages/3_QA.py")
 
     if st.button("Quiz", use_container_width=True):
+
         st.switch_page("pages/4_Quiz.py")
