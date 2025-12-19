@@ -2,6 +2,7 @@ structure (for now):
 
 -Studyspark.py
 -.env
+-.gitignore
 -pages
 --(all four pages go here)
 -services
