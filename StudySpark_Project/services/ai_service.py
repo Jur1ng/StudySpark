@@ -1,4 +1,3 @@
-# Standard imports
 import os
 import json
 from pathlib import Path
@@ -8,7 +7,7 @@ from google.genai import types
 
 
 class AIService:
-    """Service for all AI operations using Gemini."""
+    # Service for all AI operations
 
     def __init__(self, model: str = "gemini-2.5-flash-lite"):
         self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -31,3 +30,4 @@ class AIService:
         )
         
         return response.text
+
