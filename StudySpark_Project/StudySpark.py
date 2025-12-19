@@ -1,4 +1,11 @@
 import streamlit as st
+from dotenv import load_dotenv
+from services.AIService import AIService
+
+load_dotenv()
+
+if 'AIService' not in st.session_state:
+    st.session_state.AIService = AIService()
 
 st.set_page_config(page_title="StudySpark", layout="centered")
 
