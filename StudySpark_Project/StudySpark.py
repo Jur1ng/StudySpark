@@ -1,14 +1,17 @@
 import streamlit as st
 from dotenv import load_dotenv
 from services.ai_service import AIService
+from utils.lang_tracing import init_tracing
 
 load_dotenv()
+
+init_tracing()
+
 
 if 'AIService' not in st.session_state:
     st.session_state.ai_service = AIService()
 
 st.set_page_config(page_title="StudySpark", layout="centered")
-
 st.title("StudySpark")
 
 st.write("Select an option below:")
@@ -27,5 +30,4 @@ with col2:
         st.switch_page("pages/3_QA.py")
 
     if st.button("Quiz", use_container_width=True):
-
         st.switch_page("pages/4_Quiz.py")
