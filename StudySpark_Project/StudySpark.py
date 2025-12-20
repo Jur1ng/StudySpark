@@ -1,6 +1,7 @@
 import streamlit as st
 from dotenv import load_dotenv
 from services.ai_service import AIService
+from services.pdf_processing_service import process_pdf
 from utils.lang_tracing import init_tracing
 
 load_dotenv()
