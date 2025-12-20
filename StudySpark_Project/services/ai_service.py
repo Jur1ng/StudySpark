@@ -32,3 +32,23 @@ class AIService:
         )
         
         return response.text
+    
+    @observe()
+    def question_answer(self, document_text, user_question) -> str:
+        
+        # Send to Gemini with prompt
+        response = self.client.models.generate_content(
+            model=self.model,
+            contents=f"""
+                Document:
+                {document_text}
+
+                Question:
+                {user_question}
+
+                Answer concisely using context from the document and outside knowledge if appropriate:
+                """
+        )
+
+        return response.text
+        
