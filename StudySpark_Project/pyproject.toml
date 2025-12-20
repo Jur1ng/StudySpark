@@ -2,7 +2,7 @@
 name = "StudySpark"
 version = "1.0.0"
 description = "blank"
-requires-python = ">=3.11, <=3.13"
+requires-python = ">=3.11, <3.13"
 dependencies = [
     "google-genai>=1.0.0",
     "streamlit>=1.40.0",
