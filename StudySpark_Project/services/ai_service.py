@@ -1,19 +1,21 @@
+# Standard imports
 import os
 import json
 from pathlib import Path
 from typing import Dict, List
 from google import genai
 from google.genai import types
+from langfuse import observe
 
 
 class AIService:
-    # Service for all AI operations
+    """Service for all AI operations using Gemini."""
 
     def __init__(self, model: str = "gemini-2.5-flash-lite"):
         self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
         self.model = model
 
-
+    @observe()
     def process_pdf(self, pdf_bytes, prompt: str = "Extract all text from this document") -> str:
 
         
@@ -30,4 +32,3 @@ class AIService:
         )
         
         return response.text
-
