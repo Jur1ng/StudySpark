@@ -24,7 +24,7 @@ num_questions = st.number_input(
 # --- Generate quiz ---
 if st.button("Generate quiz", type="primary"):
     with st.spinner("Generating quiz..."):
-        st.session_state.quiz = st.session_state.ai_service.generate_quiz(document_text, int(num_questions))
+    st.session_state.quiz = st.session_state.ai_service.generate_quiz(document_text, int(num_questions))
     st.session_state.q_index = 0
     st.session_state.submitted = False
     st.session_state.last_result = None
@@ -76,4 +76,5 @@ if quiz:
 
     if is_last:
         st.info("You reached the end of the quiz.")
+
 
