@@ -38,19 +38,20 @@ def process_pdf(pdf_bytes: bytes, flag: bool) -> str:
         if page_text:
             text.append(page_text)
     
-    
-    images = extract_images_from_pdf(pdf_bytes)
-    if len(images) > 20: #Just so the ai does not process over 20 images
-        images = images[:20]
-    for page_number, image in images:
-        if image.width < 200 or image.height < 200:
-            continue
-        analysis = st.session_state.ai_service.analyze_image(image, page_number)
-        extracted_text.append(
-            f"\n[Image Analysis — Page {page_number}]\n{analysis}"
-        )
+    if flag:
+        images = extract_images_from_pdf(pdf_bytes)
+        if len(images) > 20: #Just so the ai does not process over 20 images
+            images = images[:20]
+        for page_number, image in images:
+            if image.width < 200 or image.height < 200:
+                continue
+            analysis = st.session_state.ai_service.analyze_image(image, page_number)
+            extracted_text.append(
+                f"\n[Image Analysis — Page {page_number}]\n{analysis}"
+            )
 
     return "\n".join(text)
+
 
 
 
