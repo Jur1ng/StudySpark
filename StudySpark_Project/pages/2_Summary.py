@@ -1,5 +1,5 @@
 import streamlit as st
-from seervices.ai_service import AIService
+from services.ai_service import AIService
 
 st.title("Document Summary")
 
@@ -33,3 +33,4 @@ if st.button("Generate Summary, type = "primary"):
 
              st.subheader(summary_type)
              st.write(summary)             
+
