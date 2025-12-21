@@ -57,7 +57,7 @@ class AIService:
         
         return response.text
     
-    
+    @observe()
     def question_answer(self, document_text, user_question) -> str:
         # Send to Gemini with prompt
         response = self.client.models.generate_content(
@@ -75,7 +75,7 @@ class AIService:
         
         return response.text
         
-        
+    @observe()  
     def generate_quiz(self, document_text: str, num_questions: int):
         prompt = f"""
         Create exactly {num_questions} multiple-choice questions based ONLY on the document.
@@ -108,6 +108,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
