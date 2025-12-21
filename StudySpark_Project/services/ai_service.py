@@ -104,9 +104,10 @@ class AIService:
 
         cleaned_text = re.sub(r"```.*?\n|```", "", response.text.strip(), flags=re.DOTALL)
 
-        return ast.literal_eval(cleaned_text)
+        return json.loads(cleaned_text)
 
        
+
 
 
 
