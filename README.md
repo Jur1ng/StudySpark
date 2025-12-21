@@ -12,7 +12,7 @@ StudySpark_Project/
 │   └── 4_Quiz.py                   # Quiz page
 ├── services/                       
 │   ├── ai_service.py               # All Gemini API calls
-│   └── pdf_processing_service.py   # PDF processing
+│   └── pdf_processing_service.py   # PDF processing (NOTE: as of now, pdf processing is done using ai_service, making this file obsolete)
 └── utils/                          # Shared utilities
     └── lang_tracing.py             # Langfuse configuration
 ```
