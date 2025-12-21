@@ -24,21 +24,6 @@ class AIService:
         else: self.client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
         self.model = model
-
-    @observe()
-    def process_pdf(self, pdf_bytes: str, prompt: str = "Extract all text from this document") -> str:
-        response = self.client.models.generate_content(
-            model=self.model,
-            contents=[
-                prompt,
-                types.Part.from_bytes(
-                    data=pdf_bytes,
-                    mime_type='application/pdf'
-                )
-            ]
-        )
-        
-        return response.text
     
     @observe()
     def generate_summary(self, document_text: str, summary_type: str, length: str) -> str:
@@ -111,6 +96,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
