@@ -5,6 +5,11 @@ helpdesk_ai/
 ├── StudySpark.py                   
 ├── .env.example                    # Environment template
 ├── pyproject.toml                  # Dependencies (uv)
+├── pages/                       
+│   ├── ai_service.py               # All Gemini API calls
+│   ├── ai_service.py               # All Gemini API calls
+│   ├── ai_service.py               # All Gemini API calls
+│   └── pdf_processing_service.py   # PDF processing
 ├── services/                       
 │   ├── ai_service.py               # All Gemini API calls
 │   └── pdf_processing_service.py   # PDF processing
