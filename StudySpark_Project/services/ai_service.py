@@ -1,5 +1,6 @@
 # Standard imports
 import os
+import ast
 import json
 from pathlib import Path
 from typing import Dict, List
@@ -70,10 +71,39 @@ class AIService:
         )
         
         return response.text
+        
+        
+    def generate_quiz(self, document_text: str, num_questions: int):
+    prompt = f"""
+Create exactly {num_questions} multiple-choice questions based ONLY on the document.
 
+Return ONLY a Python list of dictionaries (no extra text), exactly in this format:
 
-    
+[
+  {{
+    "question": "question text",
+    "options": {{"A": "...", "B": "...", "C": "...", "D": "..."}},
+    "answer": "A",
+    "explanation": "1-2 sentences explaining why the correct answer is correct"
+  }}
+]
+
+Rules:
+- Always include 4 options A-D
+- "answer" must be exactly one of: A, B, C, D
+- Explanation must justify the correct answer based on the document
+- No introductions, no markdown, no commentary outside the list
+"""
+
+    response = self.client.models.generate_content(
+        model = self.model,
+        contents=[prompt, document_text],
+    )
+
+    return ast.literal_eval(response.text.strip())
+
        
+
 
 
 
