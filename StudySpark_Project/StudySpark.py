@@ -7,8 +7,8 @@ from utils.lang_tracing import init_tracing
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
-    api_key = os.getenv("GOOGLE_API_KEY")
-else: api_key = st.secrets["GOOGLE_API_KEY"]
+    st.session_state.api_key = os.getenv("GOOGLE_API_KEY")
+else: st.session_state.api_key = st.secrets["GOOGLE_API_KEY"]
 
 init_tracing()
 
@@ -58,6 +58,7 @@ if st.session_state.get("pdf_uploaded", False):
         st.switch_page("pages/4_Quiz.py")
 else:
     st.sidebar.write("Upload a PDF first to unlock these options")
+
 
 
 
