@@ -34,7 +34,7 @@ class AIService:
             """
     
         response = self.client.models.generate_content(
-            model= self.model
+            model= self.model,
             contents=[prompt, image]
         )
         return response.text
@@ -110,6 +110,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
