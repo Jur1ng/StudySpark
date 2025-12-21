@@ -13,7 +13,7 @@ class AIService:
     """Service for all AI operations using Gemini."""
 
     def __init__(self, model: str = "gemini-2.5-flash-lite"):
-        self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+        self.client = genai.Client(api_key=st.session_state.api_key)
         self.model = model
 
     @observe()
@@ -103,6 +103,7 @@ Rules:
     return ast.literal_eval(response.text.strip())
 
        
+
 
 
 
