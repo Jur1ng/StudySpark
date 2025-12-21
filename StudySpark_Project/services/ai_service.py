@@ -15,7 +15,7 @@ from langfuse import observe
 class AIService:
     """Service for all AI operations using Gemini."""
 
-    def __init__(self, key: str, model: str = "gemini-2.5-flash-lite"):
+    def __init__(self, model: str = "gemini-2.5-flash-lite"):
         
         ENV_FILE = find_dotenv()
         if ENV_FILE:
@@ -111,6 +111,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
