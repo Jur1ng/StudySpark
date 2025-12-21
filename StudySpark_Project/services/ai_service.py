@@ -2,7 +2,6 @@
 import os
 import ast
 import json
-import streamlit as st
 from pathlib import Path
 from typing import Dict, List
 from google import genai
@@ -13,8 +12,8 @@ from langfuse import observe
 class AIService:
     """Service for all AI operations using Gemini."""
 
-    def __init__(self, model: str = "gemini-2.5-flash-lite"):
-        self.client = genai.Client(api_key=st.session_state.api_key)
+    def __init__(self, key: str, model: str = "gemini-2.5-flash-lite"):
+        self.client = genai.Client(api_key=key)
         self.model = model
 
     @observe()
@@ -104,6 +103,7 @@ Rules:
     return ast.literal_eval(response.text.strip())
 
        
+
 
 
 
