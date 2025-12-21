@@ -17,6 +17,26 @@ class AIService:
         self.client = genai.Client(api_key=key)
         self.model = model
 
+    def analyze_image_with_gemini(self, image, page_number):
+        prompt = f"""
+            This image comes from page {page_number} of a study document.
+        
+            Please:
+            - Explain what this diagram or image represents
+            - Describe key components and relationships
+            - Summarize its educational meaning clearly
+            - If it is a graph, explain axes and trends
+            - If it is a flowchart, explain the process
+        
+            Output plain text suitable for study notes.
+            """
+    
+        response = self.client.models.generate_content(
+            model= self.model
+            contents=[prompt, image]
+        )
+        return response.text
+    
     @observe()
     def generate_summary(self, document_text: str, summary_type: str, length: str) -> str:
         prompt_map = {
@@ -88,6 +108,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
