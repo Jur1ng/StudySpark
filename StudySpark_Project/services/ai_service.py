@@ -70,7 +70,36 @@ class AIService:
         )
         
         return response.text
-        
+
+
+    def generate_quiz(self, document_text: str, num_questions: int):
+        prompt = f"""
+Create {num_questions} multiple-choice questions based ONLY on the document.
+
+Return ONLY a Python list of dictionaries (no extra text), exactly like:
+
+[
+  {{
+    "question": "text",
+    "options": {{"A":"...", "B":"...", "C":"...", "D":"..."}},
+    "answer": "A",
+    "explanation": "1-2 sentences"
+  }}
+]
+
+Rules:
+- 4 options A-D
+- answer must be one of A/B/C/D
+- explanation must justify why the correct answer is correct
+"""
+
+        resp = self.client.models.generate_content(
+            model="gemini-1.5-flash",
+            contents=[prompt, document_text],
+        )
+
+        # Convert text -> Python list safely
+        return ast.literal_eval(resp.text.strip())
 
 
 
