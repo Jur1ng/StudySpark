@@ -18,7 +18,7 @@ summary_type = st.selectbox( "Choose your prefered summary format:",
 
 length = st.selectbox("Length", ["Short", "Medium", "Detailed"], index = 1)
 
-if st.button("Generate Summary, type = "primary"):
+if st.button("Generate Summary", type = "primary"):
              prompt_map = {
               "Bullet points": f"Summarize the document as bullet points. Keep it {length.lower()}.",
               "Key takeaways": f"Give the key takeaways from the document. Keep it {length.lower()}.",
@@ -33,4 +33,5 @@ if st.button("Generate Summary, type = "primary"):
 
              st.subheader(summary_type)
              st.write(summary)             
+
 
