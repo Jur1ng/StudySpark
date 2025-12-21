@@ -34,6 +34,7 @@ StudySpark_Project/
 ### 1. Clone and Navigate
 
 ```bash
+git clone <your-repo-url>
 cd Projeto_de_Curso/StudySpark_Project
 ```
 ### 2. Install Dependencies
@@ -45,7 +46,7 @@ uv sync
 
 Or using pip:
 ```bash
-pip install -r requirements.txt
+pip install (all of the dependancies listed in the 
 ```
 ### 3. Configure Environment
 
