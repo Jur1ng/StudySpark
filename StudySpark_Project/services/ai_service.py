@@ -17,6 +17,7 @@ class AIService:
         self.client = genai.Client(api_key=key)
         self.model = model
 
+    @observe()
     def analyze_image(self, image, page_number):
         prompt = f"""
             This image comes from page {page_number} of a study document.
@@ -109,6 +110,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
