@@ -36,6 +36,18 @@ class AIService:
     @observe()
 
     def generate_summary(self, document_text: str, prompt: str) -> str:
+         prompt_map = {
+              "Bullet points": f"Summarize the document as bullet points. Keep it {length.lower()}.",
+              "Key takeaways": f"Give the key takeaways from the document. Keep it {length.lower()}.",
+              "Overview paragraph": f"Write a clear overview paragraph of the document. Keep it {length.lower()}.",
+              "Key terms": f"Extract important key terms and define each briefly. Keep it {length.lower()}.",
+              "Section-by-section": f"Summarize the document section-by-section with short bullets per section. Keep it {length.lower()}."
+             }
+         prompt = prompt_map.get(summary_type)
+         if not prompt:
+             return "Invalid Summary Type Selected."
+        
+        
         response = self.client.models.generate_content(
             model= self.model,
             contents=[prompt, document_text],
@@ -61,5 +73,6 @@ class AIService:
 
         return response.text
         
+
 
 
