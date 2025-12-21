@@ -1,6 +1,9 @@
 import streamlit as st
 from services.ai_service import AIService
 
+if st.button("⬅ Back to Main Menu"):
+    st.switch_page("StudySpark.py")
+
 st.title("Document Summary")
 
 st.write("This page will show the document summary.")
@@ -32,6 +35,7 @@ if st.button("Generate Summary", type = "primary"):
     
     st.subheader(summary_type)
     st.write(summary)             
+
 
 
 
