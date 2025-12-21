@@ -10,4 +10,4 @@ dependencies = [
     "langfuse>=2.0.0",
     "pypdf>=6.0.0"
 ]
-package-mode = false
+packages = [{ include = "StudySpark" }]
