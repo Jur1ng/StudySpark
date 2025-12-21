@@ -4,6 +4,7 @@ import ast
 import re
 import json
 import streamlit as st
+from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 from typing import Dict, List
 from google import genai
@@ -110,6 +111,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
