@@ -24,9 +24,10 @@ if uploaded_file:
         # Store in session state for chat
         st.session_state.pdf_text = result
         st.session_state.pdf_uploaded = True
-    st.success(f"File '{uploaded_file.name}' uploaded successfully!{result}")
+    st.success(f"File '{uploaded_file.name}' uploaded successfully!")
 
 else: st.warning("Please upload a pdf")
+
 
 
 
