@@ -45,12 +45,13 @@ def process_pdf(pdf_bytes: bytes, flag: bool) -> str:
         if len(images) > 20: #Just so the ai does not process over 20 images
             images = images[:20]
         for img in images:
-            explanation = st.session_state.ai_service.analyze_image(img, page_number)
+            explanation = st.session_state.ai_service.analyze_image(img["bytes"],img["mime"],img["page"])
             text.append(
                  f"\n[Image Analysis — Page {img['page']}]\n{analysis}"
             )
 
     return "\n".join(text)
+
 
 
 
