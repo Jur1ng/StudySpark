@@ -1,7 +1,7 @@
 import streamlit as st
 from dotenv import load_dotenv
 from services.ai_service import AIService
-from services.pdf_processing_service import process_pdf, extract_images_from_pdf
+from services.pdf_processing_service import process_pdf
 
 load_dotenv()
 
@@ -27,6 +27,7 @@ if uploaded_file:
     st.success(f"File '{uploaded_file.name}' uploaded successfully!")
 
 else: st.warning("Please upload a pdf")
+
 
 
 
