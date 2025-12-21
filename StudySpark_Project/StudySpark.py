@@ -8,7 +8,6 @@ load_dotenv()
 
 init_tracing()
 
-
 if 'AIService' not in st.session_state:
     st.session_state.ai_service = AIService()
 
@@ -44,6 +43,14 @@ with col2:
         st.button("Quiz (Upload PDF first)", disabled=True, use_container_width=True)
 
 #Sidebar
+
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}  /* hides the top-left menu */
+footer {visibility: hidden;}     /* hides the footer */
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.sidebar.title("Navigation")
 
 if st.session_state.get("pdf_uploaded", False):
@@ -55,3 +62,4 @@ if st.session_state.get("pdf_uploaded", False):
         st.switch_page("pages/4_Quiz.py")
 else:
     st.sidebar.write("Upload a PDF first to unlock these options")
+
