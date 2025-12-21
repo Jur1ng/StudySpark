@@ -5,6 +5,10 @@ st.title("Document Summary")
 
 st.write("This page will show the document summary.")
 
+if not st.session_state.get("pdf_uploaded", False):
+    st.warning("Please upload a PDF first!")
+    st.stop()  # stops the rest of the page from rendering
+    
 document_text = st.session_state.pdf_text
 
 #make sure the ai service exists
@@ -28,6 +32,7 @@ if st.button("Generate Summary", type = "primary"):
     
     st.subheader(summary_type)
     st.write(summary)             
+
 
 
 
