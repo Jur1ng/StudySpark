@@ -2,7 +2,9 @@ import streamlit as st
 
 st.title("Quiz")
 
-#This is just an example of output, do not use it
+if not st.session_state.get("pdf_uploaded", False):
+    st.warning("Please upload a PDF first!")
+    st.stop()  # stops the rest of the page from rendering
 
 st.write("Answer the question below:")
 
@@ -15,4 +17,5 @@ if st.button("Submit"):
     if answer == "42":
         st.success("Correct!")
     else:
+
         st.error("Incorrect. Try again.")
