@@ -36,6 +36,7 @@ class AIService:
     
     @observe()
 
+    
     def generate_summary(self, document_text: str, summary_type: str, length: str) -> str:
         prompt_map = {
               "Bullet points": f"Summarize the document as bullet points. Keep it {length.lower()}.",
@@ -54,6 +55,7 @@ class AIService:
         )
         
         return response.text
+    
     
     def question_answer(self, document_text, user_question) -> str:
         # Send to Gemini with prompt
@@ -103,6 +105,7 @@ class AIService:
         return ast.literal_eval(response.text.strip())
 
        
+
 
 
 
