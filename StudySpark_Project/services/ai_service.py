@@ -18,7 +18,7 @@ class AIService:
         self.model = model
 
     @observe()
-    def analyze_image(self, image, page_number):
+    def analyze_image(self, image_bytes, mime_type, page_number):
         prompt = f"""
             This image comes from page {page_number} of a study document.
         
@@ -35,7 +35,7 @@ class AIService:
     
         response = self.client.models.generate_content(
             model= self.model,
-            contents=[prompt, image]
+            contents=[prompt, {"mime_type": mime_type, "data": image_bytes}]
         )
         return response.text
     
@@ -110,6 +110,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
