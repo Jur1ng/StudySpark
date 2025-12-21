@@ -34,7 +34,7 @@ StudySpark_Project/
 ### 1. Clone and Navigate
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Jur1ng/StudySpark/tree/main
 cd Projeto_de_Curso/StudySpark_Project
 ```
 ### 2. Install Dependencies
