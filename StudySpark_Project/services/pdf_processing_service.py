@@ -1,5 +1,5 @@
 from io import BytesIO
-from pymupdf import PdfReader
+from PyPDF2 import PdfReader
 from services.ai_service import AIService
 import fitz
 
@@ -52,6 +52,7 @@ def process_pdf(pdf_bytes: bytes, flag: bool) -> str:
             )
 
     return "\n".join(text)
+
 
 
 
