@@ -19,20 +19,11 @@ summary_type = st.selectbox( "Choose your prefered summary format:",
 length = st.selectbox("Length", ["Short", "Medium", "Detailed"], index = 1)
 
 if st.button("Generate Summary", type = "primary"):
-             prompt_map = {
-              "Bullet points": f"Summarize the document as bullet points. Keep it {length.lower()}.",
-              "Key takeaways": f"Give the key takeaways from the document. Keep it {length.lower()}.",
-              "Overview paragraph": f"Write a clear overview paragraph of the document. Keep it {length.lower()}.",
-              "Key terms": f"Extract important key terms and define each briefly. Keep it {length.lower()}.",
-              "Section-by-section": f"Summarize the document section-by-section with short bullets per section. Keep it {length.lower()}."
-             }
-             prompt = prompt_map[summary_type]
+    with st.spinner("Generating..."):
+        summary  = st.session_state.ai_service.generate_summary(document_text, prompt)
+    st.subheader(summary_type)
+    st.write(summary)             
 
-             with st.spinner("Generating..."):
-                 summary  = st.session_state.ai_service.generate_summary(document_text, prompt)
-
-             st.subheader(summary_type)
-             st.write(summary)             
 
 
 
