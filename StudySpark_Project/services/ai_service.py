@@ -45,8 +45,7 @@ class AIService:
         }
         
         prompt = prompt_map.get(summary_type)
-        if not prompt:
-            return "Invalid Summary Type Selected."
+       
         
         response = self.client.models.generate_content(
             model= self.model,
@@ -72,6 +71,7 @@ class AIService:
         
         return response.text
         
+
 
 
 
