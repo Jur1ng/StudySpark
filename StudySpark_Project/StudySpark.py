@@ -12,6 +12,9 @@ init_tracing()
 if 'AIService' not in st.session_state:
     st.session_state.ai_service = AIService()
 
+if 'pdf_uploaded' not in st.session_state:
+    st.session_state.pdf_uploaded = False
+    
 st.set_page_config(page_title="StudySpark", layout="centered")
 st.title("StudySpark")
 
@@ -23,12 +26,19 @@ with col1:
     if st.button("Document Upload", use_container_width=True):
         st.switch_page("pages/1_Document_Upload.py")
 
-    if st.button("Summary", use_container_width=True):
-        st.switch_page("pages/2_Summary.py")
+    # Disable if PDF not uploaded
+    if st.session_state.pdf_uploaded:
+        if st.button("Summary", use_container_width=True):
+            st.switch_page("pages/2_Summary.py")
+    else:
+        st.button("Summary (Upload PDF first)", disabled=True, use_container_width=True)
 
 with col2:
-    if st.button("Q&A", use_container_width=True):
-        st.switch_page("pages/3_QA.py")
-
-    if st.button("Quiz", use_container_width=True):
-        st.switch_page("pages/4_Quiz.py")
+    if st.session_state.pdf_uploaded:
+        if st.button("Q&A", use_container_width=True):
+            st.switch_page("pages/3_QA.py")
+        if st.button("Quiz", use_container_width=True):
+            st.switch_page("pages/4_Quiz.py")
+    else:
+        st.button("Q&A (Upload PDF first)", disabled=True, use_container_width=True)
+        st.button("Quiz (Upload PDF first)", disabled=True, use_container_width=True)
