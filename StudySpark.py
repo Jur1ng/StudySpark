@@ -8,7 +8,8 @@ from utils.lang_tracing import init_tracing
 init_tracing()
 
 if 'ai_service' not in st.session_state:
-    st.session_state.ai_service = AIService()
+    with st.spinner("Connecting to Gemini..."):
+        st.session_state.ai_service = AIService()
 
 if 'pdf_uploaded' not in st.session_state:
     st.session_state.pdf_uploaded = False
@@ -53,6 +54,7 @@ if st.session_state.get("pdf_uploaded", False):
         st.switch_page("pages/4_Quiz.py")
 else:
     st.sidebar.write("Upload a PDF first to unlock these options")
+
 
 
 
