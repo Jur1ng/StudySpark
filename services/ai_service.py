@@ -26,13 +26,10 @@ class AIService:
         self.model = model
     
     @observe()
-    def process_pdf(self, pdf_path: str, prompt: str = "Extract all text from this document") -> str:
-    with open(pdf_path, 'rb') as f:
-        pdf_bytes = f.read()
+    def process_pdf(self, pdf_bytes, prompt: str = "Extract all text from this document") -> str:
     
-    # Send to Gemini with prompt
-    response = client.models.generate_content(
-        model=MODEL,
+    response = self.client.models.generate_content(
+        model=self.model,
         contents=[
             prompt,
             types.Part.from_bytes(
@@ -115,6 +112,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
