@@ -35,7 +35,7 @@ class AIService:
     
         response = self.client.models.generate_content(
             model= self.model,
-            contents=[prompt, {"mime_type": mime_type, "data": image_bytes}]
+            contents=[prompt, mime_type, image_bytes]
         )
         return response.text
     
@@ -110,6 +110,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
