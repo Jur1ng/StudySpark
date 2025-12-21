@@ -18,26 +18,19 @@ class AIService:
         self.model = model
 
     @observe()
-    def analyze_image(self, image_bytes, mime_type, page_number):
-        prompt = f"""
-            This image comes from page {page_number} of a study document.
-        
-            Please:
-            - Explain what this diagram or image represents
-            - Describe key components and relationships
-            - Summarize its educational meaning clearly
-            - If it is a graph, explain axes and trends
-            - If it is a flowchart, explain the process
-            - Try to make the explanation short
-        
-            Output plain text suitable for study notes.
-            """
+    def process_pdf(pdf_bytes: str, prompt: str = "Extract all text from this document") -> str:
+    response = client.models.generate_content(
+        model=self.model,
+        contents=[
+            prompt,
+            types.Part.from_bytes(
+                data=pdf_bytes,
+                mime_type='application/pdf'
+            )
+        ]
+    )
     
-        response = self.client.models.generate_content(
-            model= self.model,
-            contents=[prompt, mime_type, image_bytes]
-        )
-        return response.text
+    return response.text
     
     @observe()
     def generate_summary(self, document_text: str, summary_type: str, length: str) -> str:
@@ -110,6 +103,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
