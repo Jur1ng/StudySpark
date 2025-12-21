@@ -93,13 +93,14 @@ Rules:
 - explanation must justify why the correct answer is correct
 """
 
-        resp = self.client.models.generate_content(
-            model="gemini-1.5-flash",
+        response = self.client.models.generate_content(
+            model= self.model,
             contents=[prompt, document_text],
         )
 
         # Convert text -> Python list safely
         return ast.literal_eval(resp.text.strip())
+
 
 
 
