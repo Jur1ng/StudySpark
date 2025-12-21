@@ -29,9 +29,10 @@ if st.button("Generate Summary", type = "primary"):
              prompt = prompt_map[summary_type]
 
              with st.spinner("Generating..."):
-                 summary  = st.session_state.ai_service.generate_summary(document, prompt)
+                 summary  = st.session_state.ai_service.generate_summary(document_text, prompt)
 
              st.subheader(summary_type)
              st.write(summary)             
+
 
 
