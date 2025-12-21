@@ -3,6 +3,10 @@ from services.ai_service import AIService
 
 st.title("Questions & Answers")
 
+if not st.session_state.get("pdf_uploaded", False):
+    st.warning("Please upload a PDF first!")
+    st.stop()  # stops the rest of the page from rendering
+    
 #question = st.text_input("Ask a question about the document:")
 
 #if st.button("Get Answer"):
@@ -41,4 +45,5 @@ if user_question := st.chat_input("Ask a question about the document:"):
     st.session_state.chat_history.append(
         {"role": "assistant", "content": response}
     )
+
 
