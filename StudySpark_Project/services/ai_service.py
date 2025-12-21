@@ -35,7 +35,7 @@ class AIService:
     
     @observe()
 
-    def generate_summary(self, document_text: str, prompt: str, summary_type: str, length: str) -> str:
+    def generate_summary(self, document_text: str, summary_type: str, length: str) -> str:
         prompt_map = {
               "Bullet points": f"Summarize the document as bullet points. Keep it {length.lower()}.",
               "Key takeaways": f"Give the key takeaways from the document. Keep it {length.lower()}.",
@@ -72,6 +72,7 @@ class AIService:
         
         return response.text
         
+
 
 
 
