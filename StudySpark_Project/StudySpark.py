@@ -4,17 +4,11 @@ from services.ai_service import AIService
 from services.pdf_processing_service import process_pdf
 from utils.lang_tracing import init_tracing
 
-if 'api_key' not in st.session_state:
-    ENV_FILE = find_dotenv()
-    if ENV_FILE:
-        load_dotenv(ENV_FILE)
-        st.session_state.api_key = os.getenv("GOOGLE_API_KEY")
-    else: st.session_state.api_key = st.secrets["GOOGLE_API_KEY"]
 
 init_tracing()
 
 if 'ai_service' not in st.session_state:
-    st.session_state.ai_service = AIService(key=st.session_state.api_key)
+    st.session_state.ai_service = AIService)
 
 if 'pdf_uploaded' not in st.session_state:
     st.session_state.pdf_uploaded = False
@@ -59,6 +53,7 @@ if st.session_state.get("pdf_uploaded", False):
         st.switch_page("pages/4_Quiz.py")
 else:
     st.sidebar.write("Upload a PDF first to unlock these options")
+
 
 
 
