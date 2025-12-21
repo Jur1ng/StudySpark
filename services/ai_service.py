@@ -26,8 +26,8 @@ class AIService:
         self.model = model
     
     @observe()
-    def ai_process_pdf(self, pdf_bytes, prompt: str = "Extract all text from this document") -> str:
-    
+    def ai_process_pdf(self, pdf_bytes) -> str:
+        prompt = "Extract all text from this document"
         response = self.client.models.generate_content(
             model=self.model,
             contents=[
@@ -112,6 +112,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
