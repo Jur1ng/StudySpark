@@ -1,5 +1,8 @@
 import streamlit as st
 
+if st.button("⬅ Back to Main Menu"):
+    st.switch_page("StudySpark.py")
+
 st.title("Quiz")
 
 if not st.session_state.get("pdf_uploaded", False):
@@ -19,3 +22,4 @@ if st.button("Submit"):
     else:
 
         st.error("Incorrect. Try again.")
+
