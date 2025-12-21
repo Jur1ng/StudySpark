@@ -27,6 +27,7 @@ class AIService:
             - Summarize its educational meaning clearly
             - If it is a graph, explain axes and trends
             - If it is a flowchart, explain the process
+            - Try to make the explanation short
         
             Output plain text suitable for study notes.
             """
@@ -108,6 +109,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
