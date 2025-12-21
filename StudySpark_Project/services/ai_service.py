@@ -34,6 +34,16 @@ class AIService:
         return response.text
     
     @observe()
+
+    def generate_summary(self, document_text: str, prompt: str) -> str:
+        response = self.client.models.generate_content(
+            model= self.model,
+            contents=[prompt, document_text],
+        )
+
+        # IMPORTANT: return the text
+        return response.text
+    
     def question_answer(self, document_text, user_question) -> str:
         
         # Send to Gemini with prompt
@@ -52,3 +62,4 @@ class AIService:
 
         return response.text
         
+
