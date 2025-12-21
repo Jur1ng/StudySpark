@@ -5,6 +5,9 @@ from services.pdf_processing_service import process_pdf
 
 load_dotenv()
 
+if st.button("⬅ Back to Main Menu"):
+    st.switch_page("StudySpark.py")
+
 st.title("Document Upload")
 
 uploaded_file = st.file_uploader(
@@ -24,3 +27,4 @@ if uploaded_file:
     st.success(f"File '{uploaded_file.name}' uploaded successfully!")
 
 else: st.warning("Please upload a pdf")
+
