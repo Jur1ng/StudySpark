@@ -102,9 +102,12 @@ class AIService:
             contents=[prompt, document_text],
         )
 
-        return ast.literal_eval(response.text.strip())
+        cleaned_text = re.sub(r"```.*?\n|```", "", response.text.strip(), flags=re.DOTALL)
+
+        return ast.literal_eval(cleaned_text)
 
        
+
 
 
 
