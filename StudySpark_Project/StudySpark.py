@@ -13,7 +13,7 @@ if 'api_key' not in st.session_state:
 
 init_tracing()
 
-if 'AIService' not in st.session_state:
+if 'ai_service' not in st.session_state:
     st.session_state.ai_service = AIService(key=st.session_state.api_key)
 
 if 'pdf_uploaded' not in st.session_state:
@@ -59,6 +59,7 @@ if st.session_state.get("pdf_uploaded", False):
         st.switch_page("pages/4_Quiz.py")
 else:
     st.sidebar.write("Upload a PDF first to unlock these options")
+
 
 
 
