@@ -16,7 +16,12 @@ class AIService:
 
     def __init__(self, key: str, model: str = "gemini-2.5-flash-lite"):
         
-        self.client = genai.Client(api_key=key)
+        ENV_FILE = find_dotenv()
+        if ENV_FILE:
+            load_dotenv(ENV_FILE)
+            self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+        else: self.client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
+
         self.model = model
 
     @observe()
@@ -105,6 +110,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
