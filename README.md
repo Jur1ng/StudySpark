@@ -52,7 +52,7 @@ pip install (all of the dependancies listed in the pyproject.toml file)
 ```
 ### 3. Configure Environment
 
-Edit `.env` and add your API keys:
+Create `.env` file and add your API keys:
 ```
 GOOGLE_API_KEY=your_gemini_api_key_here
 ```
