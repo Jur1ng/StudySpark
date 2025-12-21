@@ -3,6 +3,7 @@ import os
 import ast
 import re
 import json
+import streamlit as st
 from pathlib import Path
 from typing import Dict, List
 from google import genai
@@ -14,6 +15,7 @@ class AIService:
     """Service for all AI operations using Gemini."""
 
     def __init__(self, key: str, model: str = "gemini-2.5-flash-lite"):
+        
         self.client = genai.Client(api_key=key)
         self.model = model
 
@@ -103,6 +105,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
