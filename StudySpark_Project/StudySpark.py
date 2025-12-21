@@ -42,3 +42,16 @@ with col2:
     else:
         st.button("Q&A (Upload PDF first)", disabled=True, use_container_width=True)
         st.button("Quiz (Upload PDF first)", disabled=True, use_container_width=True)
+
+#Sidebar
+st.sidebar.title("Navigation")
+
+if st.session_state.get("pdf_uploaded", False):
+    if st.sidebar.button("Summary"):
+        st.switch_page("pages/2_Summary.py")
+    if st.sidebar.button("Q&A"):
+        st.switch_page("pages/3_QA.py")
+    if st.sidebar.button("Quiz"):
+        st.switch_page("pages/4_Quiz.py")
+else:
+    st.sidebar.write("Upload a PDF first to unlock these options")
