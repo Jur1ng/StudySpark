@@ -46,7 +46,7 @@ uv sync
 
 Or using pip:
 ```bash
-pip install (all of the dependancies listed in the 
+pip install (all of the dependancies listed in the pyproject.toml file)
 ```
 ### 3. Configure Environment
 
