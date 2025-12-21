@@ -18,10 +18,10 @@ StudySpark_Project/
 ```
 
 
-##Streamlit.io App Link - https://studyspark-8sj2nxw3ptg8heauugzyps.streamlit.app/
+## Streamlit.io App Link - https://studyspark-8sj2nxw3ptg8heauugzyps.streamlit.app/
 
 
-##User Guide
+## User Guide
 ### 1. Open the app (be it with the link or locally)
 ### 2. Upload a PDF document (Has to be text, not a scan, photo, etc.)
 ### 3. Now you can one of the following:
