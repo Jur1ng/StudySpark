@@ -29,7 +29,7 @@ def extract_images_from_pdf(pdf_bytes):
 
 
 
-def process_pdf(pdf_bytes: bytes, flag: boolean) -> str:
+def process_pdf(pdf_bytes: bytes, flag: bool) -> str:
     # Text-based PDF
     reader = PdfReader(BytesIO(pdf_bytes))
     text = []
@@ -51,5 +51,6 @@ def process_pdf(pdf_bytes: bytes, flag: boolean) -> str:
         )
 
     return "\n".join(text)
+
 
 
