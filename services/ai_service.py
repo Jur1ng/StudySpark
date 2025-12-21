@@ -26,6 +26,25 @@ class AIService:
         self.model = model
     
     @observe()
+    def process_pdf(self, pdf_path: str, prompt: str = "Extract all text from this document") -> str:
+    with open(pdf_path, 'rb') as f:
+        pdf_bytes = f.read()
+    
+    # Send to Gemini with prompt
+    response = client.models.generate_content(
+        model=MODEL,
+        contents=[
+            prompt,
+            types.Part.from_bytes(
+                data=pdf_bytes,
+                mime_type='application/pdf'
+            )
+        ]
+    )
+    
+    return response.text
+    
+    @observe()
     def generate_summary(self, document_text: str, summary_type: str, length: str) -> str:
         prompt_map = {
               "Bullet points": f"Summarize the document as bullet points. Keep it {length.lower()}.",
@@ -96,6 +115,7 @@ class AIService:
         return json.loads(cleaned_text)
 
        
+
 
 
 
