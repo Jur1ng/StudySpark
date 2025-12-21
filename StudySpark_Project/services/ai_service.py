@@ -41,7 +41,6 @@ class AIService:
             contents=[prompt, document_text],
         )
 
-        # IMPORTANT: return the text
         return response.text
     
     def question_answer(self, document_text, user_question) -> str:
@@ -62,4 +61,5 @@ class AIService:
 
         return response.text
         
+
 
