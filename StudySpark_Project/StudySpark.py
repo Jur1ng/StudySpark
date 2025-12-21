@@ -4,7 +4,9 @@ from services.ai_service import AIService
 from services.pdf_processing_service import process_pdf
 from utils.lang_tracing import init_tracing
 
-load_dotenv()
+ENV_FILE = find_dotenv()
+if ENV_FILE:
+    load_dotenv(ENV_FILE)
 
 init_tracing()
 
@@ -54,5 +56,6 @@ if st.session_state.get("pdf_uploaded", False):
         st.switch_page("pages/4_Quiz.py")
 else:
     st.sidebar.write("Upload a PDF first to unlock these options")
+
 
 
