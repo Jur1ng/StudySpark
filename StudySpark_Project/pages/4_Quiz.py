@@ -7,7 +7,7 @@ if not st.session_state.get("pdf_uploaded", False):
     st.warning("Please upload a PDF first!")
     st.stop()
 
-document_text = st.session_state.pdf_tex
+document_text = st.session_state.pdf_text
 
 if "ai_service" not in st.session_state:
     st.session_state.ai_service = AIService()
@@ -76,3 +76,4 @@ if quiz:
 
     if is_last:
         st.info("You reached the end of the quiz.")
+
