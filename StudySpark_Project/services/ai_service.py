@@ -103,11 +103,12 @@ class AIService:
             contents=[prompt, document_text],
         )
 
-        cleaned_text = re.sub(r"```.*?\n|```", "", response.text.strip(), flags=re.DOTALL)
+        cleaned_text = re.sub(r"^```.*\n|```$", "", response.text.strip(), flags=re.MULTILINE)
 
         return json.loads(cleaned_text)
 
        
+
 
 
 
