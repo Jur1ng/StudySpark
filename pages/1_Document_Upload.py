@@ -18,7 +18,7 @@ uploaded_file = st.file_uploader(
 if uploaded_file:
     pdf_bytes = uploaded_file.read()
     with st.spinner("Processing pdf..."):
-        result = st.session_state.ai_service.process_pdf(pdf_bytes)
+        result = st.session_state.ai_service.ai_process_pdf(pdf_bytes)
 
         # Store in session state for chat
         st.session_state.pdf_text = result
@@ -26,6 +26,7 @@ if uploaded_file:
     st.success(f"File '{uploaded_file.name}' uploaded successfully!")
 
 else: st.warning("Please upload a pdf")
+
 
 
 
