@@ -46,13 +46,13 @@ def process_pdf(pdf_bytes: bytes, flag: bool) -> str:
         for img in images:
             if image.width < 200 or image.height < 200:
                 continue
-            )
             explanation = st.session_state.ai_service.analyze_image(image, page_number)
             text.append(
                  f"\n[Image Analysis — Page {img['page']}]\n{analysis}"
             )
 
     return "\n".join(text)
+
 
 
 
