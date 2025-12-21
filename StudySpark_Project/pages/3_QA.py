@@ -1,6 +1,9 @@
 import streamlit as st
 from services.ai_service import AIService
 
+if st.button("⬅ Back to Main Menu"):
+    st.switch_page("StudySpark.py")
+
 st.title("Questions & Answers")
 
 if not st.session_state.get("pdf_uploaded", False):
@@ -45,5 +48,6 @@ if user_question := st.chat_input("Ask a question about the document:"):
     st.session_state.chat_history.append(
         {"role": "assistant", "content": response}
     )
+
 
 
