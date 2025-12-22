@@ -1,7 +1,7 @@
 ## Project Structure
 
 ```
-StudySpark_Project/
+StudySpark/
 ├── StudySpark.py                   
 ├── .env.example                    # Environment template
 ├── pyproject.toml                  # Dependencies (uv)
