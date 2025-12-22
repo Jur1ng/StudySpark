@@ -19,7 +19,7 @@ if "ai_service" not in st.session_state:
     st.session_state.ai_service = AIService()
 
 #----UI: pick a summary format----
-summary_type = st.selectbox( "Choose your prefered summary format:",
+summary_type = st.selectbox( "Choose your preferred summary format:",
                ["Bullet points", "Key takeaways", "Overview paragraph",
                 "Key terms", "Section-by-section"])
 
@@ -35,6 +35,7 @@ if st.button("Generate Summary", type = "primary"):
     
     st.subheader(summary_type)
     st.write(summary)             
+
 
 
 
