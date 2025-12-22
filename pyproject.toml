@@ -2,7 +2,7 @@
 name = "studyspark"
 version = "1.0.0"
 description = "blank"
-authors = ["Your Name"]
+authors = ["Iurii Sheiman <20231734@novaims.unl.pt>", "Emmanuella Ohanma<20211659@novaims.unl.pt>"]
 package-mode = false
 
 [tool.poetry.dependencies]
