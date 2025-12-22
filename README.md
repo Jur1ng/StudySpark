@@ -23,7 +23,7 @@ StudySpark/
 
 ## User Guide
 ### 1. Open the app (be it with the link or locally)
-### 2. Upload a PDF document (Has to be text, not a scan, photo, etc.)
+### 2. Upload a PDF document
 ### 3. Now you can one of the following:
 #### 3.1 Generate document summary - choose your preferred summary format and length, and press "Generate Summary"
 #### 3.2 Chat with an "Assistant" - just ask a question regarding the paper, and receive an answer
