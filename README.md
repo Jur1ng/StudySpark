@@ -8,7 +8,7 @@ StudySpark_Project/
 ├── pages/                          # Additional UI pages
 │   ├── 1_Document_Upload.py        # Document upload page
 │   ├── 2_Summary.py                # Summary page
-│   ├── 3_QA.py                     # Quetions/Answers page
+│   ├── 3_QA.py                     # Questions/Answers page
 │   └── 4_Quiz.py                   # Quiz page
 ├── services/                       
 │   ├── ai_service.py               # All Gemini API calls
@@ -25,8 +25,8 @@ StudySpark_Project/
 ### 1. Open the app (be it with the link or locally)
 ### 2. Upload a PDF document (Has to be text, not a scan, photo, etc.)
 ### 3. Now you can one of the following:
-#### 3.1 Generate document summary - choose your prefered summary format and length, and press "Generate Summary"
-#### 3.2 Chat with an "Assistant" - just ask a question regarding the paper, and recieve an answer
+#### 3.1 Generate document summary - choose your preferred summary format and length, and press "Generate Summary"
+#### 3.2 Chat with an "Assistant" - just ask a question regarding the paper, and receive an answer
 #### 3.3 Generate a quiz - Pick a number of questions, press "Generate Quiz" and you get to solve a quiz about the document
 
 
