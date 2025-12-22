@@ -3,7 +3,7 @@
 ```
 StudySpark/
 ├── StudySpark.py                   
-├── .env.example                    # Environment template
+├── env.example                    # Environment template
 ├── pyproject.toml                  # Dependencies (uv)
 ├── pages/                          # Additional UI pages
 │   ├── 1_Document_Upload.py        # Document upload page
