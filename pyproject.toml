@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "studyspark"
+name = "Resume and Cover Letter AI Assistant"
 version = "1.0.0"
 description = "blank"
 authors = ["Iurii Sheiman <20231734@novaims.unl.pt>", "Emmanuella Ohanma<20211659@novaims.unl.pt>"]
